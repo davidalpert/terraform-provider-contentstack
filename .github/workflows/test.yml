@@ -19,6 +19,7 @@ jobs:
   # Ensure project builds before running testing matrix
   build:
     name: Build
+    needs: generate
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -27,14 +28,22 @@ jobs:
         with:
           go-version-file: 'go.mod'
           cache: true
+      - name: Install Task
+        uses: arduino/setup-task@v1
+      - name: Setup build dependencies
+        run: |
+          go install github.com/restechnica/semverbot/cmd/sbot@latest
+          go install github.com/git-chglog/git-chglog/cmd/git-chglog@v0.15.1
       - run: go mod download
-      - run: go build -v .
-      - name: Run linters
-        uses: golangci/golangci-lint-action@08e2f20817b15149a52b5b3ebe7de50aff2ba8c5 # v3.4.0
-        with:
-          version: latest
+      - run: task build
+  # TODO: resolve Cannot open: File exists
+  #      - name: Run linters
+  #        uses: golangci/golangci-lint-action@08e2f20817b15149a52b5b3ebe7de50aff2ba8c5 # v3.4.0
+  #        with:
+  #          version: latest
 
   generate:
+    name: Validate Generation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
@@ -42,7 +51,13 @@ jobs:
         with:
           go-version-file: 'go.mod'
           cache: true
-      - run: go generate ./...
+      - name: Install Task
+        uses: arduino/setup-task@v1
+      - name: Setup build dependencies
+        run: |
+          go install github.com/restechnica/semverbot/cmd/sbot@latest
+          go install github.com/git-chglog/git-chglog/cmd/git-chglog@v0.15.1
+      - run: task gen
       - name: git diff
         run: |
           git diff --compact-summary --exit-code || \
@@ -72,8 +87,12 @@ jobs:
         with:
           terraform_version: ${{ matrix.terraform }}
           terraform_wrapper: false
+      - name: Install Task
+        uses: arduino/setup-task@v1
+      - name: Setup build dependencies
+        run: |
+          go install github.com/restechnica/semverbot/cmd/sbot@latest
+          go install github.com/git-chglog/git-chglog/cmd/git-chglog@v0.15.1
       - run: go mod download
-      - env:
-          TF_ACC: "1"
-        run: go test -v -cover ./internal/provider/
+      - run: task test
         timeout-minutes: 10
