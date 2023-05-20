@@ -67,7 +67,6 @@ tasks:
         vars:
           VERSION: "{{ .NEXT_VERSION }}"
       - task: test
-      - git add -f internal/version/detail.go
       - git-chglog --next-tag v{{ .NEXT_VERSION }} --output CHANGELOG.md
       - git add -f CHANGELOG.md
       - git commit --message "release notes for v{{ .NEXT_VERSION }}"
