@@ -27,6 +27,16 @@ tasks:
     cmds:
       - go generate main.go
 
+  lint:
+    desc: run golangci-lint
+    cmds:
+      - golangci-lint run
+
+  format:
+    desc: run gofmt
+    cmds:
+      - gofmt -w -s .
+
   test:
     desc: run unit tests
     run: once
@@ -62,6 +72,8 @@ tasks:
       - git-chglog --output RELEASE_NOTES.md --template .chglog/RELEASE_NOTES.tpl.md "v{{ .VERSION }}"
 
   release:
+    deps:
+      - format
     cmds:
       - task: gen
         vars:
