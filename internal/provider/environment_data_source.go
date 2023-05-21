@@ -83,21 +83,10 @@ func (d *EnvironmentDataSource) Schema(ctx context.Context, req datasource.Schem
 				MarkdownDescription: "deploy_content",
 				Computed:            true,
 			},
-			"urls": schema.MapNestedAttribute{ // urls by locale
-				NestedObject: schema.NestedAttributeObject{
-					Attributes: map[string]schema.Attribute{
-						//"locale": schema.StringAttribute{
-						//	MarkdownDescription: "locale",
-						//	Computed:            true,
-						//},
-						"url": schema.StringAttribute{
-							MarkdownDescription: "url",
-							Computed:            true,
-						},
-					},
-				},
+			"urls": schema.MapAttribute{ // urls by locale
+				ElementType:         types.StringType,
 				Computed:            true,
-				MarkdownDescription: "url schema of the Environment",
+				MarkdownDescription: "urls by locale",
 			},
 		},
 	}
@@ -151,7 +140,7 @@ func (d *EnvironmentDataSource) Read(ctx context.Context, req datasource.ReadReq
 	urls, dg := flattenUrlsByLocale(g.Urls)
 	resp.Diagnostics.Append(dg...)
 
-	uu, dg := types.MapValue(types.ObjectType{AttrTypes: map[string]attr.Type{"url": types.StringType}}, urls)
+	uu, dg := types.MapValue(types.StringType, urls)
 	resp.Diagnostics.Append(dg...)
 
 	data.URLs = uu
@@ -173,14 +162,7 @@ func flattenUrlsByLocale(urls []cschema.LocaleURLPair) (map[string]attr.Value, d
 	result := map[string]attr.Value{}
 	innerDiagnostics := diag.Diagnostics{}
 	for _, u := range urls {
-		// attributeTypes map[string]attr.Type, attributes map[string]attr.Value
-		uu, dg := types.ObjectValue(map[string]attr.Type{
-			"url": types.StringType,
-		}, map[string]attr.Value{
-			"url": types.StringValue(u.Url),
-		})
-		innerDiagnostics.Append(dg...)
-		result[u.Locale] = uu
+		result[u.Locale] = types.StringValue(u.Url)
 	}
 	return result, innerDiagnostics
 }

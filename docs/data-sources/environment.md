@@ -26,14 +26,7 @@ Environment data source
 - `id` (String) internal terraform resource id (matches the name when the Environment has been created/imported)
 - `uid` (String) internal contentstack identifier
 - `updated_at` (String) updated_at of the Global Field
-- `urls` (Attributes Map) url schema of the Environment (see [below for nested schema](#nestedatt--urls))
+- `urls` (Map of String) urls by locale
 - `version` (Number) version number of the Environment
-
-<a id="nestedatt--urls"></a>
-### Nested Schema for `urls`
-
-Read-Only:
-
-- `url` (String) url
 
 
