@@ -45,10 +45,17 @@ tasks:
     cmds:
       - go test -v ./...
 
+  clean:
+    desc: clean
+    run: once
+    cmds:
+      - rm -rf ./bin
+
   build:
     desc: build
     run: once
     deps:
+      - clean
       - gen
     cmds:
       - go build -o ./bin/terraform-provider-contentstack_v{{ .VERSION }} .

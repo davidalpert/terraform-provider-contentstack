@@ -169,6 +169,7 @@ func (p *ContentStackProvider) Resources(ctx context.Context) []func() resource.
 
 func (p *ContentStackProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
+		NewEnvironmentDataSource,
 		NewGlobalFieldDataSource,
 	}
 }
