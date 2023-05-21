@@ -22,6 +22,8 @@ type ContentStackProvider struct {
 	// provider is built and ran locally, and "test" when running acceptance
 	// testing.
 	version string
+	commit  string
+	date    string
 }
 
 // ContentStackProviderModel describes the provider data model.
@@ -171,10 +173,12 @@ func (p *ContentStackProvider) DataSources(ctx context.Context) []func() datasou
 	}
 }
 
-func New(version string) func() provider.Provider {
+func New(version, commit, date string) func() provider.Provider {
 	return func() provider.Provider {
 		return &ContentStackProvider{
 			version: version,
+			commit:  commit,
+			date:    date,
 		}
 	}
 }
