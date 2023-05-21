@@ -1,4 +1,4 @@
-module github.com/davidalpert/terraform-provider-contentstack-admin
+module github.com/davidalpert/terraform-provider-contentstack
 
 go 1.19
 

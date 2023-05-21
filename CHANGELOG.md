@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <!-- vale Google.Headings = NO -->
-<h1 align="center">terraform-plugin-contentstack-admin</h1>
+<h1 align="center">terraform-plugin-contentstack</h1>
 <!-- vale Google.Headings = YES -->
 
 <p align="center">
@@ -21,11 +21,11 @@
   ·
   <a href="./CHANGELOG.md"><strong>CHANGELOG</strong></a>
   <br />
-  <!-- <a href="https://github.com/davidalpert/terraform-provider-contentstack-admin">View Demo</a>
+  <!-- <a href="https://github.com/davidalpert/terraform-provider-contentstack">View Demo</a>
   · -->
-  <a href="https://github.com/davidalpert/terraform-provider-contentstack-admin/issues">Report Bug</a>
+  <a href="https://github.com/davidalpert/terraform-provider-contentstack/issues">Report Bug</a>
   ·
-  <a href="https://github.com/davidalpert/terraform-provider-contentstack-admin/issues">Request Feature</a>
+  <a href="https://github.com/davidalpert/terraform-provider-contentstack/issues">Request Feature</a>
 </p>
 
 ## Changelog

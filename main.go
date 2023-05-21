@@ -5,7 +5,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/davidalpert/terraform-provider-contentstack-admin/internal/provider"
+	"github.com/davidalpert/terraform-provider-contentstack/internal/provider"
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 )
 
