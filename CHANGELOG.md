@@ -31,6 +31,16 @@
 ## Changelog
 
 
+<a name="v0.2.0"></a>
+## [v0.2.0] - 2023-05-21
+### Build
+- don't bother testing independently on a push to main
+- capture commit and build date
+
+### Code Refactoring
+- rename provider
+
+
 <a name="v0.1.0"></a>
 ## v0.1.0 - 2023-05-21
 ### Build
@@ -53,6 +63,7 @@
 - Merge pull request [#13](https://github.com/davidalpert/go-git-mob/issues/13) from davidalpert/build
 
 
-[Unreleased]: https://github.com/davidalpert/go-git-mob/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/davidalpert/go-git-mob/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/davidalpert/go-git-mob/compare/v0.1.0...v0.2.0
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://opensource.org/licenses/MIT
