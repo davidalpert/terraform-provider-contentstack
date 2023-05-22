@@ -3,7 +3,7 @@ module github.com/davidalpert/terraform-provider-contentstack
 go 1.19
 
 require (
-	github.com/davidalpert/go-contentstack v0.2.1
+	github.com/davidalpert/go-contentstack v0.3.1
 	github.com/google/go-cmp v0.5.9
 	github.com/hashicorp/terraform-plugin-docs v0.14.1
 	github.com/hashicorp/terraform-plugin-framework v1.2.0
