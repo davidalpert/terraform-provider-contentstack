@@ -31,6 +31,18 @@
 ## Changelog
 
 
+<a name="v0.3.0"></a>
+## [v0.3.0] - 2023-05-24
+### Bug Fixes
+- proper state management of computed properties
+
+### Code Refactoring
+- store environment urls by locale
+
+### Features
+- environment data source
+
+
 <a name="v0.2.0"></a>
 ## [v0.2.0] - 2023-05-21
 ### Build
@@ -63,7 +75,8 @@
 - Merge pull request [#13](https://github.com/davidalpert/go-git-mob/issues/13) from davidalpert/build
 
 
-[Unreleased]: https://github.com/davidalpert/go-git-mob/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/davidalpert/go-git-mob/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/davidalpert/go-git-mob/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/davidalpert/go-git-mob/compare/v0.1.0...v0.2.0
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://opensource.org/licenses/MIT
