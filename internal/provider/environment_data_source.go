@@ -37,14 +37,6 @@ type EnvironmentDataSourceModel struct {
 	DeployContent types.Bool   `tfsdk:"deploy_content"`
 }
 
-type EnvironmentURLDataSourceModel struct {
-	//Locale string `tfsdk:"locale"`
-	URL string `tfsdk:"url"`
-}
-
-//func BuildComputedFieldsSchema() schema.ListNestedAttribute {
-//}
-
 func (d *EnvironmentDataSource) Metadata(ctx context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
 	resp.TypeName = req.ProviderTypeName + "_environment"
 }
@@ -131,7 +123,7 @@ func (d *EnvironmentDataSource) Read(ctx context.Context, req datasource.ReadReq
 	}
 
 	data.Name = types.StringValue(g.Name)
-	data.UID = types.StringValue(g.Uid)
+	data.UID = types.StringValue(g.UID)
 	data.Version = types.Int64Value(int64(g.Version))
 	data.CreatedAt = types.StringValue("TBD")
 	data.UpdatedAt = types.StringValue("TBD")
@@ -150,7 +142,7 @@ func (d *EnvironmentDataSource) Read(ctx context.Context, req datasource.ReadReq
 	// Write logs using the tflog package
 	// Documentation: https://terraform.io/plugin/log
 	tflog.Trace(ctx, "read an environment", map[string]interface{}{
-		"uid":  g.Uid,
+		"uid":  g.UID,
 		"name": g.Name,
 	})
 
