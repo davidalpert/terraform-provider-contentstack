@@ -927,6 +927,8 @@ github.com/davidalpert/go-contentstack v0.2.1 h1:5PJq806isWYlYhUfJ0fxSpILT3hjAfH
 github.com/davidalpert/go-contentstack v0.2.1/go.mod h1:EndQvfjTkYJ1EkuWUdNIa/eJ82ahOMtLdZ75eWQGgZQ=
 github.com/davidalpert/go-contentstack v0.3.0 h1:alry0fBjYS2b4bLXxNQAea5hlFxGMms4wdXjpNF+eq8=
 github.com/davidalpert/go-contentstack v0.3.0/go.mod h1:4Y707zBHtiizmO0dYHou3vTzjfnMlAKXZnbmWdrZjio=
+github.com/davidalpert/go-contentstack v0.3.1 h1:PLt3+iy8wk30W7reqKl3pbNU9ZsJSOGX4+TyzoVApW4=
+github.com/davidalpert/go-contentstack v0.3.1/go.mod h1:4Y707zBHtiizmO0dYHou3vTzjfnMlAKXZnbmWdrZjio=
 github.com/deckarep/golang-set v1.7.1 h1:SCQV0S6gTtp6itiFrTqI+pfmJ4LN85S1YzhDf9rTHJQ=
 github.com/deckarep/golang-set v1.7.1/go.mod h1:93vsz/8Wt4joVM7c2AVqh+YRMiUSc14yDtF28KmMOgQ=
 github.com/dennwc/varint v1.0.0/go.mod h1:hnItb35rvZvJrbTALZtY/iQfDs48JKRG1RPpgziApxA=

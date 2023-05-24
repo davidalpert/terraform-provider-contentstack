@@ -1,0 +1,185 @@
+2023-05-24T10:15:18.264-0500 [DEBUG] provider.terraform-provider-contentstack_v0.2.0: environment_create:
+
+tf_provider_addr=registry.terraform.io/davidalpert/contentstack
+tf_req_id=8316aeb8-6b1d-9c1d-2158-f1cb26915020
+tf_resource_type=contentstack_environment
+tf_rpc=ApplyResourceChange
+@module=contentstack
+
+req="resource.CreateRequest{
+Config:tfsdk.Config{
+Raw:tftypes.Value{
+typ:tftypes.Object{
+  AttributeTypes:map[string]tftypes.Type{
+    "created_at":tftypes.primitive{name:"String", _:[]struct {}(nil)},
+    "deploy_content":tftypes.primitive{name:"Bool", _:[]struct {}(nil)},
+"id":tftypes.primitive{ name:"String", _:[]struct { }(nil)},
+"name":tftypes.primitive{ name:"String", _:[]struct { }(nil)},
+"uid":tftypes.primitive{ name:"String", _:[]struct { }(nil)},
+"updated_at":tftypes.primitive{ name:"String", _:[]struct { }(nil)},
+"urls":tftypes.Map{ ElementType:tftypes.primitive{ name:"String", _:[]struct { }(nil)}, _:[]struct { }(nil)},
+"version":tftypes.primitive{ name:"Number", _:[]struct {
+}(nil)}}, OptionalAttributes:map[string]struct {
+}(nil), _:[]struct {
+}(nil)}, value:map[string]tftypes.Value{
+"created_at":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"deploy_content":tftypes.Value{
+typ:tftypes.primitive{
+name:"Bool", _:[]struct {
+}(nil)}, value:false},
+"id":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"name":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:"qa"},
+"uid":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"updated_at":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"urls":tftypes.Value{
+typ:tftypes.Map{
+ElementType:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, _:[]struct {
+}(nil)}, value:map[string]tftypes.Value{
+"en-us":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:"https://trial.teamusa.org"},
+"es-us":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:"https://en-es.teamusa.org"}}},
+"version":tftypes.Value{
+typ:tftypes.primitive{
+name:"Number", _:[]struct {
+}(nil)}, value:interface {
+}(nil)}}}, Schema:schema.Schema{
+Attributes:map[string]schema.Attribute{
+"created_at":schema.StringAttribute{
+CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"created_at of the Global Field", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{
+stringplanmodifier.copyStateValue{
+}}, Default:defaults.String(nil)},
+"deploy_content":schema.BoolAttribute{
+CustomType:basetypes.BoolTypable(nil), Required:false, Optional:true, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"deploy_content", DeprecationMessage:"", Validators:[]validator.Bool(nil), PlanModifiers:[]planmodifier.Bool(nil), Default:defaults.Bool(nil)},
+"id":schema.StringAttribute{
+CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"internal terraform resource id (matches the uid when the Environment has been created/imported)", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{
+stringplanmodifier.copyStateValue{
+}}, Default:defaults.String(nil)},
+"name":schema.StringAttribute{
+CustomType:basetypes.StringTypable(nil), Required:true, Optional:false, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"name of the Environment", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String(nil), Default:defaults.String(nil)},
+"uid":schema.StringAttribute{
+CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"internal contentstack identifier", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{
+stringplanmodifier.copyStateValue{
+}}, Default:defaults.String(nil)},
+"updated_at":schema.StringAttribute{
+CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"updated_at of the Global Field", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String(nil), Default:defaults.String(nil)},
+"urls":schema.MapAttribute{
+ElementType:basetypes.StringType{
+}, CustomType:basetypes.MapTypable(nil), Required:false, Optional:true, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"urls by locale", DeprecationMessage:"", Validators:[]validator.Map(nil), PlanModifiers:[]planmodifier.Map(nil), Default:defaults.Map(nil)},
+"version":schema.Int64Attribute{
+CustomType:basetypes.Int64Typable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"version number of the Environment", DeprecationMessage:"", Validators:[]validator.Int64(nil), PlanModifiers:[]planmodifier.Int64(nil), Default:defaults.Int64(nil)}}, Blocks:map[string]schema.Block(nil), Description:"", MarkdownDescription:"Environment resource", DeprecationMessage:"", Version:0}}, Plan:tfsdk.Plan{
+Raw:tftypes.Value{
+typ:tftypes.Object{
+AttributeTypes:map[string]tftypes.Type{
+"created_at":tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)},
+"deploy_content":tftypes.primitive{
+name:"Bool", _:[]struct {
+}(nil)},
+"id":tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)},
+"name":tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)},
+"uid":tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)},
+"updated_at":tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)},
+"urls":tftypes.Map{
+ElementType:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, _:[]struct {
+}(nil)},
+"version":tftypes.primitive{
+name:"Number", _:[]struct {
+}(nil)}}, OptionalAttributes:map[string]struct {
+}(nil), _:[]struct {
+}(nil)}, value:map[string]tftypes.Value{
+"created_at":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"deploy_content":tftypes.Value{
+typ:tftypes.primitive{
+name:"Bool", _:[]struct {
+}(nil)}, value:false},
+"id":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"name":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:"qa"},
+"uid":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:interface {
+}(nil)},
+"updated_at":tftypes.Value{
+typ:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, value:0x0},
+"urls":tftypes.Value{
+typ:tftypes.Map{
+ElementType:tftypes.primitive{
+name:"String", _:[]struct {
+}(nil)}, _:[]struct {
+}(nil)}, value:map[string]tftypes.Value{
+"en-us":tftypes.Value{typ:tftypes.primitive{name:"String", _:[]struct {}(nil)}, value:"https://trial.teamusa.org"},
+"es-us":tftypes.Value{typ:tftypes.primitive{name:"String", _:[]struct {}(nil)}, value:"https://en-es.teamusa.org"}}},
+"version":tftypes.Value{typ:tftypes.primitive{name:"Number", _:[]struct {}(nil)}, value:0x0}}}, Schema:schema.Schema{Attributes:map[string]schema.Attribute{"created_at":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"created_at of the Global Field", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{stringplanmodifier.copyStateValue{}}, Default:defaults.String(nil)},
+"deploy_content":schema.BoolAttribute{CustomType:basetypes.BoolTypable(nil), Required:false, Optional:true, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"deploy_content", DeprecationMessage:"", Validators:[]validator.Bool(nil), PlanModifiers:[]planmodifier.Bool(nil), Default:defaults.Bool(nil)},
+"id":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"internal terraform resource id (matches the uid when the Environment has been created/imported)", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{stringplanmodifier.copyStateValue{}}, Default:defaults.String(nil)},
+"name":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:true, Optional:false, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"name of the Environment", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String(nil), Default:defaults.String(nil)},
+"uid":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"internal contentstack identifier", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{stringplanmodifier.copyStateValue{}}, Default:defaults.String(nil)},
+"updated_at":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"updated_at of the Global Field", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String(nil), Default:defaults.String(nil)},
+"urls":schema.MapAttribute{ElementType:basetypes.StringType{}, CustomType:basetypes.MapTypable(nil), Required:false, Optional:true, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"urls by locale", DeprecationMessage:"", Validators:[]validator.Map(nil), PlanModifiers:[]planmodifier.Map(nil), Default:defaults.Map(nil)},
+"version":schema.Int64Attribute{CustomType:basetypes.Int64Typable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"version number of the Environment", DeprecationMessage:"", Validators:[]validator.Int64(nil), PlanModifiers:[]planmodifier.Int64(nil), Default:defaults.Int64(nil)}}, Blocks:map[string]schema.Block(nil), Description:"", MarkdownDescription:"Environment resource", DeprecationMessage:"", Version:0}}, ProviderMeta:tfsdk.Config{Raw:tftypes.Value{typ:tftypes.Type(nil), value:interface {}(nil)}, Schema:fwschema.Schema(nil)}}"
+
+resp="&resource.CreateResponse{State:tfsdk.State{Raw:tftypes.Value{typ:tftypes.Object{AttributeTypes:map[string]tftypes.Type{"created_at":tftypes.primitive{name:"String", _:[]struct {}(nil)},
+"deploy_content":tftypes.primitive{name:"Bool", _:[]struct {}(nil)},
+"id":tftypes.primitive{name:"String", _:[]struct {}(nil)},
+"name":tftypes.primitive{name:"String", _:[]struct {}(nil)},
+"uid":tftypes.primitive{name:"String", _:[]struct {}(nil)},
+"updated_at":tftypes.primitive{name:"String", _:[]struct {}(nil)},
+"urls":tftypes.Map{ElementType:tftypes.primitive{name:"String", _:[]struct {}(nil)}, _:[]struct {}(nil)},
+"version":tftypes.primitive{name:"Number", _:[]struct {}(nil)}}, OptionalAttributes:map[string]struct {}(nil), _:[]struct {}(nil)}, value:interface {}(nil)}, Schema:schema.Schema{Attributes:map[string]schema.Attribute{"created_at":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"created_at of the Global Field", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{stringplanmodifier.copyStateValue{}}, Default:defaults.String(nil)},
+"deploy_content":schema.BoolAttribute{CustomType:basetypes.BoolTypable(nil), Required:false, Optional:true, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"deploy_content", DeprecationMessage:"", Validators:[]validator.Bool(nil), PlanModifiers:[]planmodifier.Bool(nil), Default:defaults.Bool(nil)},
+"id":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"internal terraform resource id (matches the uid when the Environment has been created/imported)", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{stringplanmodifier.copyStateValue{}}, Default:defaults.String(nil)},
+"name":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:true, Optional:false, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"name of the Environment", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String(nil), Default:defaults.String(nil)},
+"uid":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"internal contentstack identifier", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String{stringplanmodifier.copyStateValue{}}, Default:defaults.String(nil)},
+"updated_at":schema.StringAttribute{CustomType:basetypes.StringTypable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"updated_at of the Global Field", DeprecationMessage:"", Validators:[]validator.String(nil), PlanModifiers:[]planmodifier.String(nil), Default:defaults.String(nil)},
+"urls":schema.MapAttribute{ElementType:basetypes.StringType{}, CustomType:basetypes.MapTypable(nil), Required:false, Optional:true, Computed:false, Sensitive:false, Description:"", MarkdownDescription:"urls by locale", DeprecationMessage:"", Validators:[]validator.Map(nil), PlanModifiers:[]planmodifier.Map(nil), Default:defaults.Map(nil)},
+"version":schema.Int64Attribute{CustomType:basetypes.Int64Typable(nil), Required:false, Optional:false, Computed:true, Sensitive:false, Description:"", MarkdownDescription:"version number of the Environment", DeprecationMessage:"", Validators:[]validator.Int64(nil), PlanModifiers:[]planmodifier.Int64(nil), Default:defaults.Int64(nil)}}, Blocks:map[string]schema.Block(nil), Description:"", MarkdownDescription:"Environment resource", DeprecationMessage:"", Version:0}}, Private:(*privatestate.ProviderData)(0x14000208548), Diagnostics:diag.Diagnostics(nil)}" @caller=/Users/dalpert/dev/personal/terraform-provider-contentstack/internal/provider/environment_resource.go:162 timestamp=2023-05-24T10:15:18.263-0500
