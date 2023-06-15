@@ -6,7 +6,7 @@ require (
 	github.com/davidalpert/go-contentstack v0.4.0
 	github.com/google/go-cmp v0.5.9
 	github.com/hashicorp/terraform-plugin-docs v0.14.1
-	github.com/hashicorp/terraform-plugin-framework v1.3.0
+	github.com/hashicorp/terraform-plugin-framework v1.3.1
 	github.com/hashicorp/terraform-plugin-framework-validators v0.10.0
 	github.com/hashicorp/terraform-plugin-log v0.9.0
 )
