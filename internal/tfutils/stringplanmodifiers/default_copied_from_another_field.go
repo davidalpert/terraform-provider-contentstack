@@ -29,6 +29,11 @@ func (m defaultCopiedFromAnotherField) MarkdownDescription(ctx context.Context) 
 }
 
 func (m defaultCopiedFromAnotherField) PlanModifyString(ctx context.Context, req planmodifier.StringRequest, resp *planmodifier.StringResponse) {
+	// Do nothing if there is a known planned value.
+	if !req.PlanValue.IsUnknown() {
+		return
+	}
+
 	// If the attribute configuration is not null, apply the current plan (terraform core has already planned to apply the configured value)
 	if !req.ConfigValue.IsNull() {
 		return

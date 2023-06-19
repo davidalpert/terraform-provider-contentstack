@@ -163,8 +163,10 @@ func (p *ContentStackProvider) Configure(ctx context.Context, req provider.Confi
 
 func (p *ContentStackProvider) Resources(ctx context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
+		NewDefaultLocaleResource,
 		NewEnvironmentResource,
 		NewGlobalFieldResource,
+		NewLocaleResource,
 	}
 }
 
@@ -172,6 +174,8 @@ func (p *ContentStackProvider) DataSources(ctx context.Context) []func() datasou
 	return []func() datasource.DataSource{
 		NewEnvironmentDataSource,
 		NewGlobalFieldDataSource,
+		NewLocaleDataSource,
+		NewLocalesDataSource,
 	}
 }
 

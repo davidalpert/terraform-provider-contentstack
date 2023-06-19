@@ -27,9 +27,9 @@ type EnvironmentDataSource struct {
 
 // EnvironmentDataSourceModel describes the data source data model.
 type EnvironmentDataSourceModel struct {
+	ID            types.String `tfsdk:"id"`
 	Name          types.String `tfsdk:"name"`
 	URLs          types.Map    `tfsdk:"urls"`
-	ID            types.String `tfsdk:"id"`
 	UID           types.String `tfsdk:"uid"`
 	CreatedAt     types.String `tfsdk:"created_at"`
 	UpdatedAt     types.String `tfsdk:"updated_at"`

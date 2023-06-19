@@ -3,24 +3,34 @@ package stringplanmodifier
 import (
 	"context"
 	"fmt"
+	"github.com/hashicorp/terraform-plugin-framework/types"
 
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/planmodifier"
-	"github.com/hashicorp/terraform-plugin-framework/types"
 )
 
 type defaultValue struct {
-	val string
+	val *string
 }
 
 // DefaultValue return a string plan modifier that sets the specified value if the planned value is Null.
 func DefaultValue(s string) planmodifier.String {
 	return defaultValue{
-		val: s,
+		val: &s,
+	}
+}
+
+// DefaultNull return a string plan modifier that sets the specified value if the planned value is Null.
+func DefaultNull() planmodifier.String {
+	return defaultValue{
+		val: nil,
 	}
 }
 
 func (m defaultValue) Description(context.Context) string {
-	return fmt.Sprintf("If value is not configured, defaults to %s", m.val)
+	if m.val == nil {
+		return fmt.Sprintf("If value is not configured, defaults to null")
+	}
+	return fmt.Sprintf("If value is not configured, defaults to %#v", *m.val)
 }
 
 func (m defaultValue) MarkdownDescription(ctx context.Context) string {
@@ -39,5 +49,9 @@ func (m defaultValue) PlanModifyString(ctx context.Context, req planmodifier.Str
 	//	return
 	//}
 
-	resp.PlanValue = types.StringValue(m.val)
+	if m.val == nil {
+		resp.PlanValue = types.StringNull()
+	} else {
+		resp.PlanValue = types.StringValue(*m.val)
+	}
 }
