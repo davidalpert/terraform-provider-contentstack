@@ -45,6 +45,14 @@ tasks:
     cmds:
       - go test -v ./...
 
+  autotest:
+    desc: run tests continuously using goconvey's test UI
+    deps:
+      - gen
+    cmds:
+      - goconvey
+    silent: true
+
   clean:
     desc: clean
     run: once
